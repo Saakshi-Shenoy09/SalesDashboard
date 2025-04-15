@@ -33,8 +33,8 @@ namespace SalesDashboard.Controllers
                 .ToList();
 
             ViewBag.CategoryLabels = sales
-                .GroupBy(s => s.Category) // Groups: Electronics -> [Phone, TV], Stationery -> [Notebook]
-                .Select(g => g.Key) // Takes "Electronics" and "Stationery" OR “From each group, take just the category name (the key used for grouping).”
+                .GroupBy(s => s.Category) // Groups: Electronics -> [Phone, TV], Accessories -> [Necklace]
+                .Select(g => g.Key) // Takes Electronics & Accessories or from each group, take just the category name(the parameter based on which grouping was done).
                 .ToList();
 
             ViewBag.CategoryData = sales
