@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center mt-2">
+    <h1 class="display-4 fw-bold mb-4">
+        Welcome to <span style="color: #1162a2;">Salesify</span>
+    </h1>
+    <p class="lead mb-4">
+        Gain insights into your sales performance with clean visualizations, smart metrics, and easy exports.
+    </p>
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-4 mb-3">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary text" style="font-weight: 500;">
+                        <i class="fa-solid fa-chart-line me-2" style="color: #1162a2"></i>Sales Overview
+                    </h5>
+                    <p class="card-text">View total sales, revenue, and trends in performance.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary" style="font-weight: 500">
+                        <i class="fa-solid fa-file-arrow-down me-2" style="color: #1162a2"></i>Export Reports
+                    </h5>
+                    <p class="card-text">Download your sales data in CSV or PDF format anytime.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="btn btn-lg text-white" style="background-color: #1162a2" asp-controller="Sales" asp-action="Index">
+        Go to Dashboard <i class="fa-solid fa-arrow-right ms-2"></i>
+    </a>
+</div>

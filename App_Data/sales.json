@@ -1,0 +1,142 @@
+[
+    {
+        "SaleID": 1,
+        "ProductName": "Bracelet",
+        "Category": "Accessories",
+        "Amount": 29.99,
+        "SaleDate": "2025-01-05T00:00:00"
+    },
+    {
+        "SaleID": 2,
+        "ProductName": "Scarf",
+        "Category": "Accessories",
+        "Amount": 14.99,
+        "SaleDate": "2025-01-10T00:00:00"
+    },
+    {
+        "SaleID": 3,
+        "ProductName": "Jeans",
+        "Category": "Apparel",
+        "Amount": 49.99,
+        "SaleDate": "2025-01-15T00:00:00"
+    },
+    {
+        "SaleID": 4,
+        "ProductName": "Heels",
+        "Category": "Footwear",
+        "Amount": 69.99,
+        "SaleDate": "2025-01-28T00:00:00"
+    },
+    {
+        "SaleID": 5,
+        "ProductName": "Backpack",
+        "Category": "Accessories",
+        "Amount": 39.99,
+        "SaleDate": "2025-02-10T00:00:00"
+    },
+    {
+        "SaleID": 6,
+        "ProductName": "Sunglasses",
+        "Category": "Accessories",
+        "Amount": 49.99,
+        "SaleDate": "2025-02-12T00:00:00"
+    },
+    {
+        "SaleID": 7,
+        "ProductName": "Boots",
+        "Category": "Footwear",
+        "Amount": 109.99,
+        "SaleDate": "2025-02-18T00:00:00"
+    },
+    {
+        "SaleID": 8,
+        "ProductName": "Sneakers",
+        "Category": "Footwear",
+        "Amount": 89.50,
+        "SaleDate": "2025-02-25T00:00:00"
+    },
+    {
+        "SaleID": 9,
+        "ProductName": "Shoes",
+        "Category": "Footwear",
+        "Amount": 59.99,
+        "SaleDate": "2025-03-01T00:00:00"
+    },
+    {
+        "SaleID": 10,
+        "ProductName": "Belt",
+        "Category": "Accessories",
+        "Amount": 24.99,
+        "SaleDate": "2025-03-05T00:00:00"
+    },
+    {
+        "SaleID": 11,
+        "ProductName": "Coat",
+        "Category": "Apparel",
+        "Amount": 89.99,
+        "SaleDate": "2025-03-12T00:00:00"
+    },
+    {
+        "SaleID": 12,
+        "ProductName": "T-Shirt",
+        "Category": "Apparel",
+        "Amount": 29.99,
+        "SaleDate": "2025-03-15T00:00:00"
+    },
+    {
+        "SaleID": 13,
+        "ProductName": "Watch",
+        "Category": "Accessories",
+        "Amount": 99.99,
+        "SaleDate": "2025-03-20T00:00:00"
+    },
+    {
+        "SaleID": 14,
+        "ProductName": "Shirt",
+        "Category": "Apparel",
+        "Amount": 39.99,
+        "SaleDate": "2025-03-22T00:00:00"
+    },
+    {
+        "SaleID": 15,
+        "ProductName": "Flip Flops",
+        "Category": "Footwear",
+        "Amount": 19.99,
+        "SaleDate": "2025-03-25T00:00:00"
+    },
+    {
+        "SaleID": 16,
+        "ProductName": "Jacket",
+        "Category": "Apparel",
+        "Amount": 79.99,
+        "SaleDate": "2025-03-30T00:00:00"
+    },
+    {
+        "SaleID": 17,
+        "ProductName": "Sandals",
+        "Category": "Footwear",
+        "Amount": 34.99,
+        "SaleDate": "2025-04-01T00:00:00"
+    },
+    {
+        "SaleID": 18,
+        "ProductName": "Hat",
+        "Category": "Accessories",
+        "Amount": 19.99,
+        "SaleDate": "2025-04-02T00:00:00"
+    },
+    {
+        "SaleID": 19,
+        "ProductName": "Socks",
+        "Category": "Apparel",
+        "Amount": 9.99,
+        "SaleDate": "2025-04-03T00:00:00"
+    },
+    {
+        "SaleID": 20,
+        "ProductName": "Slippers",
+        "Category": "Footwear",
+        "Amount": 22.99,
+        "SaleDate": "2025-04-05T00:00:00"
+    }
+]

@@ -1,0 +1,116 @@
+﻿@model List<SalesDashboard.Models.Sale>
+@{
+    ViewBag.Title = "Sales Dashboard";
+    var fromDate = Context.Request.Query["fromDate"];
+    var toDate = Context.Request.Query["toDate"];
+    var monLabels = (List<string>)ViewBag.MonthlyLabels;
+    var monData = (List<decimal>)ViewBag.MonthlyData;
+    var catLabels = (List<string>)ViewBag.CategoryLabels;
+    var catData = (List<decimal>)ViewBag.CategoryData;
+}
+
+<h2 class="text-center mb-4 fw-bold" style="color: #1162a2">Sales Dashboard</h2>
+
+<div class="text-center mb-4">
+    <form method="get">
+        <label>From: <input type="date" name="fromDate" value="@fromDate" /></label>
+        <label>To: <input type="date" name="toDate" value="@toDate" /></label>
+        <button type="submit" class="btn text-white btn-primary btn-sm">Filter</button>
+        <a asp-action="ExportCsv" asp-controller="Sales" class="btn btn-success btn-sm">Export CSV</a>
+    </form>
+</div>
+
+<div class="d-flex justify-content-center gap-3 mb-4 flex-wrap">
+    <div class="card text-white bg-primary" style="width: 9rem; border-radius: 8px;">
+        <div class="card-body text-center p-2">
+            <h6 class="card-title mb-1" style="font-size: 0.85rem;">Total Sales</h6>
+            <p class="card-text mb-0" style="font-size: 1rem;">@ViewBag.TotalSales</p>
+        </div>
+    </div>
+
+    <div class="card text-white bg-success" style="width: 9rem; border-radius: 8px;">
+        <div class="card-body text-center p-2">
+            <h6 class="card-title mb-1" style="font-size: 0.85rem;">Total Orders</h6>
+            <p class="card-text mb-0" style="font-size: 1rem;">@ViewBag.TotalOrders</p>
+        </div>
+    </div>
+
+    <div class="card text-white" style="background-color: #ff6b6b; width: 9rem; border-radius: 8px;">
+        <div class="card-body text-center p-2">
+            <h6 class="card-title mb-1" style="font-size: 0.85rem;">Total Revenue</h6>
+            <p class="card-text mb-0" style="font-size: 1rem;">$ @ViewBag.TotalRevenue</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-center mb-4">
+    <table class="table table-bordered table-striped w-75 mx-auto">
+        <thead class="table-light">
+            <tr>
+                <th>ID</th>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sale in Model)
+            {
+                <tr>
+                    <td>@sale.SaleID</td>
+                    <td>@sale.ProductName</td>
+                    <td>@sale.Category</td>
+                    <td>$ @sale.Amount</td>
+                    <td>@sale.SaleDate.ToString("yyyy-MM-dd")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="d-flex justify-content-center gap-4 mb-4">
+    <div class="text-center">
+        <h5 class="mb-3">Monthly Sales</h5>
+        <canvas id="monthlyChart" width="300" height="300"></canvas>
+    </div>
+
+    <div class="text-center">
+        <h5 class="mb-3">Category-wise Sales</h5>
+        <canvas id="categoryChart" width="300" height="200"></canvas>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const monthlyLabels = JSON.parse('@Html.Raw(Json.Serialize(monLabels))');
+        const monthlyData = JSON.parse('@Html.Raw(Json.Serialize(monData))');
+        const categoryLabels = JSON.parse('@Html.Raw(Json.Serialize(catLabels))');
+        const categoryData = JSON.parse('@Html.Raw(Json.Serialize(catData))');
+
+        new Chart(document.getElementById('monthlyChart'), {
+            type: 'bar',
+            data: {
+                labels: monthlyLabels, // X-axis labels
+                datasets: [{
+                    label: 'Revenue', //becomes visible on the tooltip and the legend
+                    data: monthlyData, //y-axis step size is decided based on this data.
+                    backgroundColor: 'skyblue'
+                }]
+            }
+        });
+
+        new Chart(document.getElementById('categoryChart'), {
+            type: 'pie',
+            data: {
+                labels: categoryLabels, //shows up on the tooltip, the legend and is the name of each slice.
+                datasets: [{
+                    data: categoryData, //slice data. 
+                    backgroundColor: ['orange', 'lightgreen', 'salmon', 'lightblue']
+                }]
+            }
+        });
+    </script>
+}
